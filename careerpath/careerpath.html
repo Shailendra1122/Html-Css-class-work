@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Your Career Path</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f7f6;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+
+        /* Top-level Stream Details */
+        details.stream {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        details.stream[open] {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        summary.stream-summary {
+            padding: 15px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1.1em;
+            background-color: #ecf0f1;
+            border-radius: 5px;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #2c3e50;
+        }
+
+        details.stream[open] summary.stream-summary {
+            border-bottom: 1px solid #ddd;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            background-color: #dfe6e9;
+        }
+
+        details.career {
+            margin: 10px 0;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            background-color: #fafafa;
+        }
+
+        summary.career-summary {
+            padding: 10px 15px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #2980b9;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        summary.career-summary:hover {
+            background-color: #f0f8ff;
+            color: #e74c3c;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary.stream-summary::after {
+            content: '+';
+            font-size: 1.2em;
+            color: #7f8c8d;
+        }
+
+        details.stream[open] summary.stream-summary::after {
+            content: '-';
+        }
+
+        summary.career-summary::after {
+            content: '▼';
+            font-size: 0.8em;
+            color: #bdc3c7;
+            transition: transform 0.2s;
+        }
+
+        details.career[open] summary.career-summary::after {
+            transform: rotate(180deg);
+        }
+
+        /* Content Areas */
+        .stream-content {
+            padding: 20px;
+        }
+
+        .career-description {
+            padding: 15px;
+            background-color: #fff;
+            border-top: 1px solid #eee;
+            color: #555;
+            font-size: 0.95em;
+            border-left: 4px solid #3498db;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .choose-btn {
+            background-color: #2ecc71;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-left: 15px;
+            transition: background-color 0.3s;
+            white-space: nowrap;
+        }
+
+        .choose-btn:hover {
+            background-color: #27ae60;
+        }
+
+        /* Stream specific accent colors */
+        details.stream:nth-of-type(1) .career-description {
+            border-left-color: #3498db;
+        }
+
+        /* Science */
+        details.stream:nth-of-type(2) .career-description {
+            border-left-color: #e67e22;
+        }
+
+        /* Commerce */
+        details.stream:nth-of-type(3) .career-description {
+            border-left-color: #9b59b6;
+        }
+
+        /* Arts */
+    </style>
+</head>
+
+<body>
+
+    <h1>Choose Your Career Path</h1>
+    <p style="text-align: center; margin-bottom: 30px;">Click on a stream to see options, then click on a career to
+        learn more.</p>
+
+    <!-- Science Stream -->
+    <details class="stream">
+        <summary class="stream-summary">Science Stream</summary>
+        <div class="stream-content">
+            <p>For students interested in technology, medicine, research, and innovation.</p>
+
+            <details class="career">
+                <summary class="career-summary">Engineering (B.Tech/B.E)</summary>
+                <div class="career-description">
+                    <p>Engineers design, build, and maintain engines, machines, and structures. Specializations include
+                        Computer Science, Mechanical, Civil, and Electrical engineering.</p>
+                    <button class="choose-btn">Choose this path</button>
+                </div>
+            </details>
+
+            <details class="career">
+                <summary class="career-summary">Medicine (MBBS/BDS)</summary>
+                <div class="career-description">
+                    <p>Doctors diagnose and treat illnesses. It requires dedication and long study hours but offers a
+                        rewarding career in saving lives.</p>
+                    <button class="choose-btn">Choose this path</button>
+                </div>
+            </details>
+
+            <details class="career">
+                <summary class="career-summary">Pure Sciences & Research</summary>
+                <div class="career-description">
+                    <p>Scientists conduct experiments to understand the natural world. This path is ideal for those with
+                        a curious mind and a passion for discovery.</p>
+                    <button class="choose-btn">Choose this path</button>
+                </div>
+            </details>
+
+            <details class="career">
+                <summary class="career-summary">Data Science & AI</summary>
+                <div class="career-description">
+                    <p>Data scientists analyze complex data to help make decisions. AI specialists build intelligent
+                        systems. This is a rapidly growing field.</p>
+                    <button class="choose-btn">Choose this path</button>
+                </div>
+            </details>
+        </div>
+    </details>
+
+    <!-- Commerce Stream -->
+    <details class="stream">
+        <summary class="stream-summary">Commerce Stream</summary>
+        <div class="stream-content">
+            <p>For students interested in business, finance, economics, and management.</p>
+
+            <details class="career">
+                <summary class="career-summary">Chartered Accountancy (CA)</summary>
+                <div class="career-description">
+                    <p>CAs manage financial accounts, auditing, and taxation. It is a prestigious qualification for
+                        finance professionals.</p>
+                    <button class="choose-btn">Choose this path</button>
+                </div>
+            </details>
+
+            <details class="career">
+                <summary class="career-summary">Business Management (BBA/MBA)</summary>
+                <div class="career-description">
+                    <p>Managers oversee operations and lead teams. An MBA opens doors to leadership roles in various
+                        industries.</p>
+                    <button class="choose-btn">Choose this path</button>
+                </div>
+            </details>
+
+            <details class="career">
+                <summary class="career-summary">Investment Banking & Finance</summary>
+                <div class="career-description">
+                    <p>Investment bankers help companies raise capital and make financial decisions. It is a
+                        high-pressure, high-reward career.</p>
+                    <button class="choose-btn">Choose this path</button>
+                </div>
+            </details>
+
+            <details class="career">
+                <summary class="career-summary">Economics</summary>
+                <div class="career-description">
+                    <p>Economists study the production and distribution of resources. They work in government, banking,
+                        and academia.</p>
+                    <button class="choose-btn">Choose this path</button>
+                </div>
+            </details>
+        </div>
+    </details>
+
+    <!-- Arts Stream -->
+    <details class="stream">
+        <summary class="stream-summary">Arts & Humanities Stream</summary>
+        <div class="stream-content">
+            <p>For students interested in creativity, social sciences, law, and media.</p>
+
+            <details class="career">
+                <summary class="career-summary">Law (LLB)</summary>
+                <div class="career-description">
+                    <p>Lawyers advise and represent clients in legal matters. It requires strong analytical and
+                        communication skills.</p>
+                    <button class="choose-btn">Choose this path</button>
+                </div>
+            </details>
+
+            <details class="career">
+                <summary class="career-summary">Journalism & Mass Communication</summary>
+                <div class="career-description">
+                    <p>Journalists report news and stories. They work in print, broadcast, and digital media.</p>
+                    <button class="choose-btn">Choose this path</button>
+                </div>
+            </details>
+
+            <details class="career">
+                <summary class="career-summary">Graphic & Fashion Design</summary>
+                <div class="career-description">
+                    <p>Designers create visual concepts. Fields include graphic design, fashion design, and interior
+                        design.</p>
+                    <button class="choose-btn">Choose this path</button>
+                </div>
+            </details>
+
+            <details class="career">
+                <summary class="career-summary">Psychology</summary>
+                <div class="career-description">
+                    <p>Psychologists study human behavior and mental processes. They work in clinical settings, schools,
+                        and organizations.</p>
+                    <button class="choose-btn">Choose this path</button>
+                </div>
+            </details>
+        </div>
+    </details>
+
+</body>
+
+</html>

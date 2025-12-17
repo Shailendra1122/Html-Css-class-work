@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Digital Museum Exhibit</title>
+    <style>
+        /* --- General Styling --- */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Smooth scrolling for internal links */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* --- Header & Navigation --- */
+        header {
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            position: sticky;
+            /* Keeps nav at top */
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        nav {
+            margin-top: 15px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        nav a:hover {
+            color: #f1c40f;
+            /* Gold hover effect */
+        }
+
+        /* --- Exhibit Sections --- */
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid #2c3e50;
+            /* Accent border */
+        }
+
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 10px;
+        }
+
+        .exhibit-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: start;
+        }
+
+        /* Responsive image styling */
+        .exhibit-img {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .exhibit-img img {
+            width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .exhibit-text {
+            flex: 2;
+            min-width: 250px;
+        }
+
+        .facts-box {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            border: 1px solid #ddd;
+        }
+
+        .facts-box h3 {
+            margin-top: 0;
+            font-size: 1.1rem;
+            color: #e67e22;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        /* --- Back to Top Button --- */
+        .top-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #34495e;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        .top-btn:hover {
+            background-color: #2c3e50;
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #2c3e50;
+            color: #bdc3c7;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body id="top">
+
+    <header>
+        <h1>🏛️ The Digital Museum</h1>
+        <nav>
+            <a href="#ancient">Ancient History</a>
+            <a href="#inventions">Inventions</a>
+            <a href="#people">Famous People</a>
+            <a href="#artifact">Artifacts</a>
+        </nav>
+    </header>
+
+    <div class="container">
+
+        <section id="ancient">
+            <h2>Ancient History: The Pyramids of Giza</h2>
+            <div class="exhibit-content">
+                <div class="exhibit-img">
+                    <img src="Great_Pyramid.jpg" alt="Pyramids of Giza">
+                </div>
+                <div class="exhibit-text">
+                    <p>The Great Pyramid of Giza is the oldest and largest of the three pyramids in the Giza pyramid
+                        complex bordering present-day Giza in Greater Cairo, Egypt. It is the oldest of the Seven
+                        Wonders of the Ancient World.</p>
+
+                    <div class="facts-box">
+                        <h3>⚡ Quick Facts</h3>
+                        <ul>
+                            <li>Built for the Pharaoh Khufu.</li>
+                            <li>Originally stood at 146.6 meters (481 feet) tall.</li>
+                            <li>It took approximately 20 years to build.</li>
+                        </ul>
+                    </div>
+                    <a href="#top" class="top-btn">↑ Back to Top</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="inventions">
+            <h2>Inventions: The Printing Press</h2>
+            <div class="exhibit-content">
+                <div class="exhibit-img">
+                    <img src="PrintMus_038.jpg" alt="Gutenberg Press">
+                </div>
+                <div class="exhibit-text">
+                    <p>Invented by Johannes Gutenberg around 1440, the movable type printing press introduced the era of
+                        mass communication. It permanently altered the structure of society by making knowledge
+                        accessible to the public.</p>
+
+                    <div class="facts-box">
+                        <h3>⚡ Quick Facts</h3>
+                        <ul>
+                            <li>The first major book printed was the "Gutenberg Bible".</li>
+                            <li>It increased the speed of book production exponentially.</li>
+                            <li>It helped fuel the Renaissance and the Scientific Revolution.</li>
+                        </ul>
+                    </div>
+                    <a href="#top" class="top-btn">↑ Back to Top</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="people">
+            <h2>Famous People: Ada Lovelace</h2>
+            <div class="exhibit-content">
+                <div class="exhibit-img">
+                    <img src="Ada_Lovelace.png" alt="Ada Lovelace">
+                </div>
+                <div class="exhibit-text">
+                    <p>Augusta Ada King, Countess of Lovelace, was an English mathematician and writer. She is chiefly
+                        known for her work on Charles Babbage's proposed mechanical general-purpose computer, the
+                        Analytical Engine.</p>
+
+                    <div class="facts-box">
+                        <h3>⚡ Quick Facts</h3>
+                        <ul>
+                            <li>She is widely considered the first computer programmer.</li>
+                            <li>She realized computers could do more than just calculate numbers.</li>
+                            <li>She was the daughter of the poet Lord Byron.</li>
+                        </ul>
+                    </div>
+                    <a href="#top" class="top-btn">↑ Back to Top</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="artifact">
+            <h2>Artifact: The Rosetta Stone</h2>
+            <div class="exhibit-content">
+                <div class="exhibit-img">
+                    <img src="Rosetta_Stone.JPG" alt="The Rosetta Stone">
+                </div>
+                <div class="exhibit-text">
+                    <p>The Rosetta Stone is a granodiorite stele inscribed with three versions of a decree issued in
+                        Memphis, Egypt, in 196 BC. Because it included Ancient Greek, it was the key to deciphering
+                        Egyptian hieroglyphs.</p>
+
+                    <div class="facts-box">
+                        <h3>⚡ Quick Facts</h3>
+                        <ul>
+                            <li>Discovered by French soldiers in 1799.</li>
+                            <li>It contains the same text in Hieroglyphs, Demotic, and Greek.</li>
+                            <li>Currently housed in the British Museum in London.</li>
+                        </ul>
+                    </div>
+                    <a href="#top" class="top-btn">↑ Back to Top</a>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>© 2023 Digital Museum Exhibit. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treasure Hunt: The Ancient Cave</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #000000;
+            --secondary-color: #ffffff;
+            --bg-color: #ffffff;
+            --text-color: #000000;
+            --accent-color: #000000;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        #game-container {
+            width: 100%;
+            max-width: 800px;
+            padding: 40px;
+            box-sizing: border-box;
+        }
+
+        h1,
+        h2 {
+            font-family: 'Cinzel', serif;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 3em;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        section {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            animation: fadeIn 0.5s ease-in-out;
+            border: 2px solid #000;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 2px solid var(--primary-color);
+            filter: grayscale(100%);
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        a {
+            display: block;
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin: 10px 0;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 2px solid var(--primary-color);
+            text-align: center;
+        }
+
+        a:hover {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        a[href="#end"],
+        a[href="#Start"],
+        a[href^="#clue1"] {
+            background-color: transparent;
+            color: #000;
+            border-color: #000;
+        }
+
+        a[href="#end"]:hover,
+        a[href="#Start"]:hover,
+        a[href^="#clue1"]:hover {
+            color: #fff;
+            border-color: #000;
+            background-color: #000;
+        }
+
+        hidden[until-found] {}
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .treasure-glow {
+            animation: none;
+        }
+
+        @keyframes glow {
+            from {
+                box-shadow: 0 0 10px var(--primary-color);
+            }
+
+            to {
+                box-shadow: 0 0 30px var(--primary-color), 0 0 10px white;
+            }
+        }
+
+        .placeholder-img {
+            width: 100%;
+            height: 300px;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #000;
+            border: 2px dashed #000;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-family: 'Cinzel', serif;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="game-container">
+        <center>
+            <h1>Treasure Hunt</h1>
+        </center>
+
+        <section id="Start">
+            <h2>The Adventure Begins</h2>
+            <p>You stand before the gaping maw of an ancient, moss-covered cave. Legends say a king's ransom lies
+                within, guarded by beasts and riddles.</p>
+            <p>Do you have the courage to enter?</p>
+            <div><img src="dungeone_Enterance.png" alt="Dungeon Entrance"></div>
+            <p>
+                <a href="#clue1">Enter the Cave</a>
+                <a href="#end">Turn Back</a>
+            </p>
+        </section>
+
+        <section id="clue1" hidden="until-found">
+            <h2>The Fork in the Road</h2>
+            <p>The air grows cold as you step inside. The path splits into two distinct tunnels.</p>
+            <p>To the left, a low growl echoes. To the right, the sound of howling wind.</p>
+            <div><img src="2_Enterance.png" alt="Two Paths"></div>
+            <p>
+                <a href="#clue2left">Take the Left Path</a>
+                <a href="#clue2right">Take the Right Path</a>
+            </p>
+        </section>
+
+        <section id="clue2left" hidden="until-found">
+            <h2>The Sleeping Dragon</h2>
+            <p>You stumble into a massive cavern. In the center, a colossal dragon slumbers atop a pile of bones.</p>
+            <div><img src="Dragon_gate.png" alt="Sleeping Dragon"></div>
+            <p>Behind it, you see a glimmer of steel. A weapon room?</p>
+            <p>
+                <a href="#Weapon-Room">Sneak Past to Weapon Room</a>
+                <a href="#clue1">Retreat</a>
+            </p>
+        </section>
+
+        <section id="Weapon-Room" hidden="until-found">
+            <h2>The Armory</h2>
+            <p>You successfully sneak past the beast. You find yourself in an ancient armory.</p>
+            <p>Resting on a pedestal is the legendary <strong>Dragon Slaying Sword</strong>. It hums with power.</p>
+            <div><img src="Weapon-Room.png" alt="Weapon Room"></div>
+            <p>Armed with this blade, you might stand a chance.</p>
+            <p>
+                <a href="#Dragon-Fight">Return to Fight the Dragon</a>
+            </p>
+        </section>
+
+        <section id="Dragon-Fight" hidden="until-found">
+            <h2>Battle with the Beast</h2>
+            <p>You charge back into the cavern, sword raised high! The dragon wakes, roaring in fury!</p>
+            <div><img src="Dragon-Fight.png" alt="Dragon Fight"></div>
+            <p>With a mighty strike, the magical blade pierces the dragon's scales. The beast falls, and the path
+                forward is revealed.</p>
+            <p>
+                <a href="#golden-gate">Proceed to the Golden Gate</a>
+            </p>
+        </section>
+
+        <section id="clue2right" hidden="until-found">
+            <h2>The Wolf Pack</h2>
+            <p>You venture down the right path, but are immediately surrounded by a pack of dire wolves with glowing red
+                eyes!</p>
+            <div><img src="Wolf-Pack.png" alt="Wolf Pack"></div>
+            <p>They snarl and snap, blocking your way.</p>
+            <p>
+                <a href="#Holy-Pond">Fight Through Them</a>
+                <a href="#clue1">Run Back</a>
+            </p>
+        </section>
+
+        <section id="Holy-Pond" hidden="until-found">
+            <h2>The Holy Pond</h2>
+            <p>Battered and bruised, you defeat the wolves and stumble upon a serene underground pond. The water glows
+                with a soft, healing light.</p>
+            <div><img src="Holy-Pond.png" alt="Holy Pond"></div>
+            <p>You drink from the waters and feel your strength return. A path behind the pond leads deeper.</p>
+            <p>
+                <a href="#golden-gate">Approach the Golden Gate</a>
+                <a href="#clue1">Go Back</a>
+            </p>
+        </section>
+
+        <section id="golden-gate" hidden="until-found">
+            <h2>The Golden Gate</h2>
+            <p>Both paths have led you here. A massive gate of solid gold blocks your way, etched with runes.</p>
+            <div><img src="golden-gate.png" alt="Golden Gate"></div>
+            <p>A stone face on the door speaks:</p>
+            <p><em>"I speak without a mouth and hear without ears. I have no body, but I come alive with wind. What am
+                    I?"</em></p>
+            <p>
+                <a href="#clue5correct">An Echo</a>
+                <a href="#clue5wrong">A Ghost</a>
+                <a href="#clue5wrong">The Wind</a>
+            </p>
+        </section>
+
+        <section id="clue5correct" hidden="until-found">
+            <h2>The Guardian Approves</h2>
+            <p>"You are wise," the guardian rumbles. The gates swing open.</p>
+            <p>Inside, a mystical mirror presents you with three shimmering portals.</p>
+            <div><img src="mirror.png" alt="Mirror"></div>
+            <div style="text-align: center;">
+                <a href="#treasure-room">Portal of Gold Light</a>
+                <a href="#hidden-chamber">Portal of Blue Light</a>
+                <a href="#trap-room">Portal of Red Light</a>
+            </div>
+        </section>
+
+        <section id="clue5wrong" hidden="until-found">
+            <h2>The Guardian's Wrath</h2>
+            <p>"Incorrect!" the guardian bellows. The floor beneath you gives way!</p>
+            <p>You slide down a chute and land... right back at the entrance.</p>
+            <p>
+                <a href="#Start">Try Again</a>
+            </p>
+        </section>
+
+        <section id="hidden-chamber" hidden="until-found">
+            <h2>The Secret Library</h2>
+            <p>You step through the blue portal into a room filled with floating books and arcane symbols.</p>
+            <div><img src="hidden-chamber.png" alt="Hidden Chamber"></div>
+            <p>An ancient tome whispers to you: "The true treasure lies within the light of gold."</p>
+            <p>It was a clue, not the end.</p>
+            <p>
+                <a href="#treasure-room">Go to the Golden Portal</a>
+                <a href="#clue5correct">Return to Mirror</a>
+            </p>
+        </section>
+
+        <section id="trap-room" hidden="until-found">
+            <h2>The Trap Room</h2>
+            <p>You step into the red light and spikes shoot from the walls!</p>
+            <div class="placeholder-img">Trap Room Image</div>
+            <p>You barely escape with your life, tumbling back out of the portal.</p>
+            <p>
+                <a href="#clue5correct">Choose Another Door</a>
+            </p>
+        </section>
+
+        <section id="treasure-room" hidden="until-found">
+            <h2>🏆 The Treasure Chamber</h2>
+            <p>You have done it! You stand in the heart of the mountain.</p>
+            <div><img src="Treasure_Room.png" alt="Treasure Room" class="treasure-glow"></div>
+            <p>Mountains of gold and jewels surround you. But in the center, the true prize awaits.</p>
+            <p><strong>The Crown of Ancient Wisdom</strong></p>
+            <div><img src="Crown_chest.png" alt="The Crown" class="treasure-glow"></div>
+            <p><strong>Congratulations, Adventurer! You have completed the hunt!</strong></p>
+            <p>
+                <a href="#end">Finish Game</a>
+            </p>
+        </section>
+
+        <section id="end" hidden="until-found">
+            <h2>The End</h2>
+            <p>Thank you for playing!</p>
+            <p>
+                <a href="#Start">Play Again</a>
+            </p>
+        </section>
+    </div>
+
+</body>
+
+</html>
