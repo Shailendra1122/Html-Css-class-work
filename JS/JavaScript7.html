@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS 7</title>
+</head>
+
+<body style="background-color: white;">
+
+<script>
+function change_color() {
+    let current = document.body.style.backgroundColor;
+
+    if(current === "white" || current === "") {
+        document.body.style.backgroundColor = "yellow";
+    }
+    else if(current === "yellow") {
+        document.body.style.backgroundColor = "red";
+    }
+    else {
+        document.body.style.backgroundColor = "white";
+    }
+}
+</script>
+
+<form>
+    <input type="button" value="Color" onclick="change_color()">
+</form>
+
+</body>
+</html>

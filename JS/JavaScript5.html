@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>JavaScript 5</title>
+    </head>
+    <body>
+        <script>
+            function goto_page(){
+                var c=confirm("visit IITKGP??");
+                if( c==true){
+                    window.location="http://www.iitkgp.ac.in";
+                }else{
+                    window.location = "http://www.google.com";
+                }
+            }
+        </script>
+        <form>
+            <input type="button" value="click and see" onclick="goto_page()">
+        </form>
+    </body>
+</html>

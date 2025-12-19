@@ -1,0 +1,22 @@
+<html>
+<head>
+    <title>JavaScript 8</title>
+</head>
+<body>
+    <script>
+        document.writeln("<h2>Guess the weather!</h2>");
+        function forecast(f){
+            a = confirm("will it rain?");
+            if(a){
+                f.option.value="rain";
+            }else{
+                f.option.value="no rain";
+            }
+        }
+    </script>
+    <form>
+        <input type = "button" value = "check wether" onclick="forecast(form)">
+        <P> Forecast: <INPUT TYPE="text" NAME="option" SIZE="7" ></P>
+    </form>
+</body> 
+</html>
