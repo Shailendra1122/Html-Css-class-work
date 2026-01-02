@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>JS 10</title>
+    </head>
+    <body>
+        <script>
+        function cat(f)
+        {
+            if(f.favcolor[0].selected)
+            {
+                alert("Favorite color is red");
+            }
+            if(f.favcolor[1].selected)
+            {
+                alert("Favorite color is green");
+            }
+            if(f.favcolor[2].selected)
+            {
+                alert("Favorite color is blue");
+            }
+        }
+        </script>
+        <form>
+            My favorite color:
+            <select name="favcolor">
+                <option>red</option>
+                <option>green</option>
+                <option>blue</option>
+            </select>
+            <p><input type="button" value="Submit" onclick="cat(this.form)"></p>
+        </form>
+    </body>
+</html>

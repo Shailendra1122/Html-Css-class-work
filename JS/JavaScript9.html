@@ -7,7 +7,10 @@
             function c_to_f(myform){
                 var cent = parseFloat(myform.c.value);
                 fahr = (cent*1.8) +32;
+                myform.f.value=fahr;
             }
         </script>
+        <input type="button" value="convert" onclick="c_to_f(this.form)">
+        <p>Fahrenheit: <input type="text" name="f" readonly></p>
     </body>
 </html>
